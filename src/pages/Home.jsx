@@ -23,6 +23,7 @@ import About from "./About";
 import Hero from "./Hero";
 import HomeTeacher from "../components/HomeTeacher";
 import HomeNotice from "../components/HomeNotice";
+import WhatsAppButton from "./WhatsAppButton";
 
 /* ================= CONSTANTS ================= */
 
@@ -114,8 +115,7 @@ const staggerItem = (reduceMotion) =>
 
 export default function Home() {
   const courses = useList("courses", "/api/v1/courses");
-  const notices = useList("notices", "/api/v1/notices");
-  const teachers = useList("teachers", "/api/v1/teachers");
+  
   const reduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll();
@@ -328,6 +328,7 @@ export default function Home() {
       </section>
 
       <BackToTop reduceMotion={reduceMotion} />
+      <WhatsAppButton/>
     </main>
   );
 }
